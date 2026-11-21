@@ -8,7 +8,7 @@ AbsensiGo is a digital attendance management system that leverages QR code techn
 
 ## 📅 Download APK
 
-You can download the latest version of the AbsensiGo Android app here: [Download APK](https://github.com/andikaputradev/absensigo/releases)
+You can download the latest version of the AbsensiGo Android app here: [Download APK](https://github.com/andikadev/absensigo/releases)
 
 > ⚠️ For testing purposes, use the following credentials:
 
@@ -29,7 +29,7 @@ You can download the latest version of the AbsensiGo Android app here: [Download
 ![Flutter](https://img.shields.io/badge/Flutter-Framework-blue)
 ![Firebase](https://img.shields.io/badge/Firebase-Backend-yellow)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Build](https://img.shields.io/github/workflow/status/andikaputradev/absensigo/Flutter%20CI)
+![Build](https://img.shields.io/github/workflow/status/andikadev/absensigo/Flutter%20CI)
 
 ---
 
@@ -200,7 +200,7 @@ courses/{courseId}/modules/{moduleId}/attendance_summary/{studentId}: {
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/andikaputradev/absensigo.git
+   git clone https://github.com/andikadev/absensigo.git
    ```
 2. Open in VSCode or Android Studio.
 3. Run `flutter pub get` to install dependencies.

@@ -23,25 +23,25 @@ class AboutAppPage extends StatelessWidget {
         ),
       ),
 
-      applicationLegalese: '© {{ year }} AbsensiGo Inc.',
+      applicationLegalese: '© {{ year }} AndikaPutraDev. All rights reserved.',
       applicationDescription: const Text(
-        'AbsensiGo is a smart attendance management system designed for universities. '
-        'Leveraging QR code technology, it simplifies and secures student check-ins during lectures. '
-        'Lecturers can dynamically generate QR codes for their sessions, while students scan them to register attendance. '
-        'The app offers real-time attendance tracking, schedule and module viewing, and personalized notifications for both students and lecturers.\n\n'
-        'To enhance accuracy, AbsensiGo incorporates geolocation to verify physical proximity, preventing fraudulent check-ins. '
-        'Lecturers can monitor attendance statistics, print reports, and send announcements. '
-        'Students can track their attendance percentage and stay informed through live updates.\n\n'
-        'With AbsensiGo, attendance is automated, secure, and efficient — redefining classroom presence in the digital age.',
+        'AbsensiGo adalah sistem manajemen presensi pintar berbasis mobile untuk pegawai dan instansi/perusahaan. '
+        'Dilengkapi pencatatan kehadiran masuk dan pulang secara real-time, validasi koordinat lokasi GPS (latitude & longitude), '
+        'serta integrasi cloud database Firebase. '
+        'Dikembangkan oleh AndikaPutraDev.',
       ),
 
       children: const <Widget>[
         ListTile(
           leading: Icon(Icons.email),
-          title: Text('Contact Us'),
+          title: Text('Kontak Pengembang'),
           subtitle: Text('wahyuandikaputra.co.id@gmail.com'),
         ),
-        ListTile(leading: Icon(Icons.link), title: Text('GitHub Account')),
+        ListTile(
+          leading: Icon(Icons.code),
+          title: Text('Developer'),
+          subtitle: Text('AndikaPutraDev'),
+        ),
       ],
     );
   }

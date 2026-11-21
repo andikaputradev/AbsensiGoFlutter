@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:773384333750:android:f5ad31f926b0fdd4103917",
         "android_client_info": {
-          "package_name": "com.andikaputradev.absensigo"
+          "package_name": "com.andikadev.absensigo"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "773384333750-i34u4q0rheestmfgbhteoor1qhms4lvo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.andikaputradev.absensigo",
+            "package_name": "com.andikadev.absensigo",
             "certificate_hash": "6dfd858bd0e5fe4fad71083486f3fee5e499b88a"
           }
         },

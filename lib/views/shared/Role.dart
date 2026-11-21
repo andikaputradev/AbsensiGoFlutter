@@ -142,8 +142,8 @@ class Role extends StatelessWidget {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   _roleOption(
-                                    icon: Icons.school_outlined,
-                                    label: 'Student',
+                                    icon: Icons.badge_outlined,
+                                    label: 'Pegawai',
                                     color: Colors.teal,
                                     onTap: () {
                                       sessionController.setRole(
@@ -154,8 +154,8 @@ class Role extends StatelessWidget {
                                   ),
 
                                   _roleOption(
-                                    icon: Icons.cast_for_education_outlined,
-                                    label: 'Lecturer',
+                                    icon: Icons.business_center_outlined,
+                                    label: 'Admin / HRD',
                                     color: Colors.indigoAccent,
                                     onTap: () {
                                       sessionController.setRole(
@@ -174,7 +174,7 @@ class Role extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 40, bottom: 40),
                           child: Text(
-                            'Powered by Nshon.dev',
+                            'Powered by AndikaPutraDev',
                             style: TextStyle(
                               color: Colors.grey[600],
                               fontSize: 14,

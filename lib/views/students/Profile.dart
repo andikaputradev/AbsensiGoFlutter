@@ -195,28 +195,28 @@ class ProfileStudent extends StatelessWidget {
 
                                 isEditing
                                     ? _buildEditableField(
-                                      label: "Name",
+                                      label: "Nama Lengkap",
                                       controller: controller.nameController,
                                     )
-                                    : _buildReadOnlyItem("Name", student.name),
+                                    : _buildReadOnlyItem("Nama Lengkap", student.name),
 
                                 isEditing
                                     ? _buildEditableField(
-                                      label: "Email",
+                                      label: "Email Pegawai",
                                       controller: controller.emailController,
                                     )
                                     : _buildReadOnlyItem(
-                                      "Email",
+                                      "Email Pegawai",
                                       student.email,
                                     ),
 
                                 _buildReadOnlyItem(
-                                  "Student ID",
+                                  "Nomor Induk Pegawai (NIP)",
                                   student.registrationNumber,
                                 ),
-                                _buildReadOnlyItem("Course", student.course),
+                                _buildReadOnlyItem("Divisi / Departemen", student.course),
                                 _buildReadOnlyItem(
-                                  "Academic Year",
+                                  "Jabatan / Posisi",
                                   student.year,
                                 ),
                               ],
@@ -275,7 +275,7 @@ class ProfileStudent extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            "Delete Account",
+                            "Hapus Akun Pegawai",
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -283,7 +283,7 @@ class ProfileStudent extends StatelessWidget {
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            "Are you sure you want to delete your student account? This action cannot be undone.",
+                            "Apakah Anda yakin ingin menghapus akun pegawai ini? Tindakan ini tidak dapat dibatalkan.",
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.grey[700]),
                           ),

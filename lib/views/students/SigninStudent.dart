@@ -19,12 +19,17 @@ class SigninStudent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Student Sign In",
+                    "Masuk Pegawai",
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 8),
+                  Text(
+                    "Silakan masuk untuk mencatat kehadiran dan absensi",
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                  ),
+                  const SizedBox(height: 28),
                   const Text(
-                    "Authentication",
+                    "Autentikasi Pegawai",
                     style: TextStyle(
                       color: Colors.blue,
                       fontSize: 18,
@@ -33,23 +38,23 @@ class SigninStudent extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   _styledInputField(
-                    hintText: "Registration Number",
+                    hintText: "Nomor Induk Pegawai (NIP) / Email",
                     controller: controller.regNoController,
-                    icon: Icons.school_rounded,
+                    icon: Icons.badge_outlined,
                     context: context,
                   ),
                   const SizedBox(height: 20),
                   Obx(
                     () => _styledInputField(
-                      hintText: "Password",
+                      hintText: "Kata Sandi",
                       controller: controller.passwordController,
-                      icon: Icons.vpn_key,
+                      icon: Icons.lock_outline,
                       obscure: controller.obscureText.value,
                       suffixIcon: IconButton(
                         icon: Icon(
                           controller.obscureText.value
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
                           color: Colors.grey,
                         ),
                         onPressed: controller.togglePasswordVisibility,
@@ -65,7 +70,7 @@ class SigninStudent extends StatelessWidget {
                         controller.forgotPassword();
                       },
                       child: const Text(
-                        "Forgot Password?",
+                        "Lupa Kata Sandi?",
                         style: TextStyle(color: Colors.blue),
                       ),
                     ),
@@ -73,17 +78,18 @@ class SigninStudent extends StatelessWidget {
                   const SizedBox(height: 10),
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
+                    height: 52,
                     child: ElevatedButton(
                       onPressed: controller.login,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF2563EB),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(12),
                         ),
+                        elevation: 2,
                       ),
                       child: const Text(
-                        "Sign In",
+                        "Masuk Pegawai",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -92,18 +98,21 @@ class SigninStudent extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 24),
                   Center(
                     child: TextButton(
                       onPressed: () => Get.toNamed('/Signup_student'),
                       child: const Text.rich(
                         TextSpan(
-                          text: "Don't have an account? ",
+                          text: "Belum punya akun? ",
                           style: TextStyle(color: Colors.black87),
                           children: [
                             TextSpan(
-                              text: "Sign up here",
-                              style: TextStyle(color: Colors.blue),
+                              text: "Registrasi Pegawai di sini",
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -123,28 +132,29 @@ class SigninStudent extends StatelessWidget {
     required String hintText,
     required TextEditingController controller,
     required IconData icon,
+    required BuildContext context,
     bool obscure = false,
     Widget? suffixIcon,
-    required BuildContext context,
   }) {
+    final theme = Theme.of(context).colorScheme;
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onSecondary,
+        color: theme.onSecondary,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 2)),
-        ],
+        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
       ),
       child: TextField(
-        cursorColor: Colors.blue,
         controller: controller,
         obscureText: obscure,
         decoration: InputDecoration(
-          prefixIcon: Icon(icon, color: Colors.grey),
-          suffixIcon: suffixIcon,
           hintText: hintText,
+          prefixIcon: Icon(icon, color: Colors.blue),
+          suffixIcon: suffixIcon,
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(vertical: 18),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
         ),
       ),
     );

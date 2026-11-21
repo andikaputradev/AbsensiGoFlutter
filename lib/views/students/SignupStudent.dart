@@ -19,83 +19,108 @@ class SignupStudent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Student Sign Up",
+                  "Registrasi Pegawai",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 8),
+                Text(
+                  "Pendaftaran akun dan profil pegawai baru",
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                ),
+                const SizedBox(height: 24),
+
+                // Bagian 1: Informasi Kepegawaian
                 const Text(
-                  "Academic Information",
+                  "Informasi Kepegawaian",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Colors.blue,
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 12),
 
                 _sectionCard([
+                  // Input 1: Nomor Induk Pegawai (NIP)
                   _inputField(
                     controller.registrationNumber,
-                    "Registration Number",
-                    Icons.school_rounded,
-                    (v) => v!.isEmpty ? 'Required' : null,
+                    "Nomor Induk Pegawai (NIP)",
+                    Icons.badge_outlined,
+                    (v) => (v == null || v.trim().isEmpty) ? 'NIP wajib diisi' : null,
                     context,
+                    hintText: "Contoh: DCI-2026-001",
                   ),
                   const SizedBox(height: 16),
 
+                  // Input 2: Divisi / Departemen
                   SearchableDropdown(
                     items: controller.courses,
-                    label: "Course",
+                    label: "Divisi / Departemen",
                     selected: controller.selectedCourse,
                     validator:
                         (value) =>
                             value == null || value.isEmpty
-                                ? 'Please select a course'
+                                ? 'Pilih Divisi / Departemen'
                                 : null,
                   ),
 
                   const SizedBox(height: 16),
 
+                  // Input 3: Jabatan / Posisi
                   _dropdown(
                     controller.years,
-                    "Year",
+                    "Jabatan / Posisi",
                     controller.selectedYear,
                     context,
                   ),
                 ], context),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 24),
+
+                // Bagian 2: Informasi Pribadi & Akun
                 const Text(
-                  "Personal Information",
+                  "Informasi Pribadi & Akun",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Colors.blue,
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 12),
 
                 _sectionCard([
+                  // Input 4: Nama Lengkap Pegawai
                   _inputField(
                     controller.name,
-                    "Full Name",
-                    Icons.person,
-                    (v) => v!.isEmpty ? 'Required' : null,
+                    "Nama Lengkap Pegawai",
+                    Icons.person_outline,
+                    (v) => (v == null || v.trim().isEmpty) ? 'Nama lengkap wajib diisi' : null,
                     context,
+                    hintText: "Contoh: Andika Putra",
                   ),
                   const SizedBox(height: 16),
+
+                  // Input 5: Email Pegawai
                   _inputField(
                     controller.email,
-                    "Email",
-                    Icons.email,
-                    (v) => v!.isEmpty ? 'Required' : null,
+                    "Email Pegawai",
+                    Icons.email_outlined,
+                    (v) {
+                      if (v == null || v.trim().isEmpty) return 'Email wajib diisi';
+                      if (!v.contains('@') || !v.contains('.')) return 'Format email tidak valid';
+                      return null;
+                    },
                     context,
+                    hintText: "Contoh: pegawai@diengcyber.com",
+                    keyboardType: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 16),
+
+                  // Input 6: Kata Sandi
                   Obx(
                     () => _passwordField(
                       controller.password,
-                      "Password",
+                      "Kata Sandi",
                       controller.obscurePassword.value,
                       controller.togglePasswordVisibility,
                       context,
@@ -103,10 +128,12 @@ class SignupStudent extends StatelessWidget {
                   ),
                 ], context),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 28),
+
+                // Tombol Utama Bawah: Simpan Data Pegawai
                 SizedBox(
                   width: double.infinity,
-                  height: 50,
+                  height: 52,
                   child: ElevatedButton(
                     onPressed: controller.submitForm,
                     style: ElevatedButton.styleFrom(
@@ -114,9 +141,10 @@ class SignupStudent extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
+                      elevation: 2,
                     ),
                     child: const Text(
-                      "Sign Up",
+                      "Simpan Data Pegawai",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -125,18 +153,19 @@ class SignupStudent extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 18),
+
                 Center(
                   child: TextButton(
                     onPressed: () => Get.back(),
                     child: const Text.rich(
                       TextSpan(
-                        text: "Already have an account? ",
+                        text: "Sudah memiliki akun? ",
                         style: TextStyle(color: Colors.black87),
                         children: [
                           TextSpan(
-                            text: "Sign in here",
-                            style: TextStyle(color: Colors.blue),
+                            text: "Masuk di sini",
+                            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -172,21 +201,24 @@ class SignupStudent extends StatelessWidget {
     String label,
     IconData icon,
     String? Function(String?) validator,
-    BuildContext context,
-  ) {
+    BuildContext context, {
+    String? hintText,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
     return TextFormField(
       cursorColor: Colors.blue,
       controller: controller,
       validator: validator,
-
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         prefixIcon: Padding(
           padding: const EdgeInsets.only(right: 12),
           child: Icon(icon, color: Colors.grey[600]),
         ),
-
         labelText: label,
-        labelStyle: TextStyle(color: Colors.blue),
+        hintText: hintText,
+        hintStyle: TextStyle(color: Colors.grey[400], fontSize: 13),
+        labelStyle: const TextStyle(color: Colors.blue),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -198,41 +230,83 @@ class SignupStudent extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.blue),
+          borderSide: const BorderSide(color: Colors.blue),
         ),
-        filled: true,
-        fillColor: Theme.of(context).colorScheme.onSecondaryFixedVariant,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
+      ),
+    );
+  }
+
+  Widget _passwordField(
+    TextEditingController controller,
+    String label,
+    bool obscure,
+    VoidCallback toggle,
+    BuildContext context,
+  ) {
+    return TextFormField(
+      cursorColor: Colors.blue,
+      controller: controller,
+      obscureText: obscure,
+      validator: (v) {
+        if (v == null || v.isEmpty) return 'Kata sandi wajib diisi';
+        if (v.length < 6) return 'Kata sandi minimal 6 karakter';
+        return null;
+      },
+      decoration: InputDecoration(
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(right: 12),
+          child: Icon(Icons.lock_outline, color: Colors.grey[600]),
+        ),
+        suffixIcon: IconButton(
+          icon: Icon(
+            obscure ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+            color: Colors.grey[600],
+          ),
+          onPressed: toggle,
+        ),
+        labelText: label,
+        hintText: "Minimal 6 karakter",
+        hintStyle: TextStyle(color: Colors.grey[400], fontSize: 13),
+        labelStyle: const TextStyle(color: Colors.blue),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Colors.grey[300]!),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Colors.grey[300]!),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Colors.blue),
         ),
       ),
     );
   }
 
   Widget _dropdown(
-    List<String> items,
-    String hint,
+    RxList<String> items,
+    String label,
     RxString selected,
     BuildContext context,
   ) {
     return Obx(
       () => DropdownButtonFormField<String>(
-        isExpanded: true, // This ensures the dropdown takes all available width
-        value: selected.value.isEmpty ? null : selected.value,
+        initialValue: selected.value.isEmpty ? null : selected.value,
         items:
             items
-                .map(
-                  (item) => DropdownMenuItem(
-                    value: item,
-                    child: Text(item, overflow: TextOverflow.ellipsis),
-                  ),
-                )
+                .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                 .toList(),
-        onChanged: (value) => selected.value = value ?? '',
+        onChanged: (v) => selected.value = v ?? '',
+        validator: (v) => (v == null || v.isEmpty) ? 'Pilih $label' : null,
         decoration: InputDecoration(
-          labelText: hint,
-          labelStyle: TextStyle(color: Colors.blue),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: Icon(Icons.work_outline, color: Colors.grey[600]),
+          ),
+          labelText: label,
+          labelStyle: const TextStyle(color: Colors.blue),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
@@ -244,71 +318,8 @@ class SignupStudent extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Colors.blue),
+            borderSide: const BorderSide(color: Colors.blue),
           ),
-          prefixIcon: const Padding(
-            padding: EdgeInsets.only(right: 12),
-            child: Icon(Icons.arrow_drop_down, color: Colors.grey),
-          ),
-          filled: true,
-          fillColor: Theme.of(context).colorScheme.onSecondaryFixedVariant,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 14,
-          ),
-        ),
-        validator:
-            (value) =>
-                value == null || value.isEmpty ? 'Please select $hint' : null,
-      ),
-    );
-  }
-
-  Widget _passwordField(
-    TextEditingController controller,
-    String label,
-    bool isObscured,
-    VoidCallback toggle,
-    BuildContext context,
-  ) {
-    return TextFormField(
-      cursorColor: Colors.blue,
-      controller: controller,
-      obscureText: isObscured,
-      validator: (value) => value!.isEmpty ? 'Required' : null,
-      decoration: InputDecoration(
-        prefixIcon: Padding(
-          padding: const EdgeInsets.only(right: 12),
-          child: Icon(Icons.lock, color: Colors.grey[600]),
-        ),
-
-        labelText: label,
-        labelStyle: TextStyle(color: Colors.blue),
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey[300]!),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey[300]!),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.blue),
-        ),
-        filled: true,
-        fillColor: Theme.of(context).colorScheme.onSecondaryFixedVariant,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
-        ),
-        suffixIcon: IconButton(
-          icon: Icon(
-            isObscured ? Icons.visibility : Icons.visibility_off,
-            color: Colors.grey[600],
-          ),
-          onPressed: toggle,
         ),
       ),
     );

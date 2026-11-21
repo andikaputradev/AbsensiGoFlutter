@@ -8,7 +8,7 @@
 PRODUCT_NAME = absensigo
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.andikaputradev.absensigo
+PRODUCT_BUNDLE_IDENTIFIER = com.andikadev.absensigo
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.andikaputradev. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.andikadev. All rights reserved.

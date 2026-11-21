@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:absensigo/services/NotificationServices.dart';
-import '../../utils/showAlert.dart'; // Adjust the import path if needed
+import '../../utils/showAlert.dart';
 
 class SigninStudentController extends GetxController {
-  final TextEditingController regNoController = TextEditingController();
+  final TextEditingController regNoController = TextEditingController(); // NIP atau Email
   final TextEditingController passwordController = TextEditingController();
   final RxBool obscureText = true.obs;
 
@@ -31,106 +31,136 @@ class SigninStudentController extends GetxController {
   }
 
   Future<void> login() async {
-    final regNo = regNoController.text.trim();
+    final inputId = regNoController.text.trim();
     final password = passwordController.text.trim();
 
-    if (regNo.isEmpty || password.isEmpty) {
-      showAlert("Error", "Please fill in all fields", Colors.red);
+    if (inputId.isEmpty || password.isEmpty) {
+      showAlert("Validasi", "Silakan masukkan NIP/Email dan Kata Sandi", Colors.orange);
       return;
     }
 
     _showLoading();
 
     try {
-      final query =
-          await _firestore
+      String emailToAuth = inputId;
+
+      // Jika user memasukkan NIP (bukan email), cari email-nya di Firestore
+      if (!inputId.contains('@')) {
+        final query = await _firestore
+            .collection('students')
+            .where('registrationNumber', isEqualTo: inputId)
+            .limit(1)
+            .get();
+
+        if (query.docs.isEmpty) {
+          // Cek juga field nip
+          final queryNip = await _firestore
               .collection('students')
-              .where('registrationNumber', isEqualTo: regNo)
+              .where('nip', isEqualTo: inputId)
               .limit(1)
               .get();
 
-      if (query.docs.isEmpty) {
-        _hideLoading();
-        showAlert(
-          "Error",
-          "No student found with that registration number",
-          Colors.red,
-        );
-        return;
+          if (queryNip.docs.isEmpty) {
+            _hideLoading();
+            showAlert(
+              "Akun Tidak Ditemukan",
+              "Tidak ditemukan pegawai dengan NIP: $inputId",
+              Colors.red,
+            );
+            return;
+          }
+          final data = queryNip.docs.first.data();
+          emailToAuth = data['email'] ?? '';
+          _savePegawaiSession(data);
+        } else {
+          final data = query.docs.first.data();
+          emailToAuth = data['email'] ?? '';
+          _savePegawaiSession(data);
+        }
       }
 
-      final studentData = query.docs.first.data();
-      final email = studentData['email'];
-
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      final cred = await _auth.signInWithEmailAndPassword(
+        email: emailToAuth,
+        password: password,
+      );
 
       _box.write('role', 'student');
-      await NotificationService.initialize();
+      _box.write('userId', cred.user?.uid ?? '');
+      _box.write('email', emailToAuth);
+
+      try {
+        await NotificationService.initialize();
+      } catch (_) {}
 
       _hideLoading();
-      showAlert("Success", "Login successful", Colors.green);
+      showAlert("Berhasil", "Selamat datang di AbsensiGo!", Colors.green);
 
-      Future.delayed(const Duration(milliseconds: 600), () {
+      Future.delayed(const Duration(milliseconds: 500), () {
         Get.offAllNamed('/StudentNavigation');
       });
     } on FirebaseAuthException catch (e) {
       _hideLoading();
-      showAlert(
-        "Login Failed",
-        e.message ?? "Authentication failed",
-        Colors.red,
-      );
+      String message = "Autentikasi gagal";
+      if (e.code == 'user-not-found') {
+        message = "Akun tidak terdaftar";
+      } else if (e.code == 'wrong-password') {
+        message = "Kata sandi yang dimasukkan salah";
+      } else if (e.code == 'invalid-credential') {
+        message = "NIP/Email atau kata sandi tidak valid";
+      } else {
+        message = e.message ?? message;
+      }
+      showAlert("Login Gagal", message, Colors.red);
     } catch (e) {
       _hideLoading();
-      showAlert("Error", "Unexpected error: $e", Colors.red);
+      showAlert("Error", "Terjadi kesalahan: $e", Colors.red);
     }
   }
 
-  Future<void> forgotPassword() async {
-    final regNo = regNoController.text.trim();
+  void _savePegawaiSession(Map<String, dynamic> data) {
+    if (data.containsKey('name')) _box.write('name', data['name']);
+    if (data.containsKey('nip')) _box.write('nip', data['nip']);
+    if (data.containsKey('registrationNumber')) _box.write('registrationNumber', data['registrationNumber']);
+    if (data.containsKey('department')) _box.write('department', data['department']);
+    if (data.containsKey('position')) _box.write('position', data['position']);
+  }
 
-    if (regNo.isEmpty) {
+  Future<void> forgotPassword() async {
+    final inputId = regNoController.text.trim();
+
+    if (inputId.isEmpty) {
       showAlert(
-        "Error",
-        "Please enter your registration number first",
+        "Lupa Kata Sandi",
+        "Masukkan NIP atau Email Anda terlebih dahulu",
         Colors.orange,
       );
       return;
     }
 
     _showLoading();
-
     try {
-      final query =
-          await _firestore
-              .collection('students')
-              .where('registrationNumber', isEqualTo: regNo)
-              .limit(1)
-              .get();
+      String emailToSend = inputId;
+      if (!inputId.contains('@')) {
+        final query = await _firestore
+            .collection('students')
+            .where('registrationNumber', isEqualTo: inputId)
+            .limit(1)
+            .get();
 
-      if (query.docs.isEmpty) {
-        _hideLoading();
-        showAlert(
-          "Error",
-          "No student found with that registration number",
-          Colors.red,
-        );
-        return;
+        if (query.docs.isEmpty) {
+          _hideLoading();
+          showAlert("Error", "Pegawai dengan NIP $inputId tidak ditemukan", Colors.red);
+          return;
+        }
+        emailToSend = query.docs.first['email'];
       }
 
-      final email = query.docs.first['email'];
-
-      await _auth.sendPasswordResetEmail(email: email);
-
+      await _auth.sendPasswordResetEmail(email: emailToSend);
       _hideLoading();
-      showAlert(
-        "Password Reset",
-        "A reset link has been sent to $email",
-        Colors.green,
-      );
+      showAlert("Email Terkirim", "Tautan reset kata sandi telah dikirim ke $emailToSend", Colors.green);
     } catch (e) {
       _hideLoading();
-      showAlert("Error", "Reset failed: $e", Colors.red);
+      showAlert("Gagal", "Gagal mengirim email reset: $e", Colors.red);
     }
   }
 

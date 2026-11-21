@@ -10,14 +10,19 @@
     <!-- For internet access -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Camera for QR scanner -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <!-- android 13+ notification access -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
-    
     <application
         android:label="AbsensiGo"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
+        android:roundIcon="@mipmap/launcher_icon"
         android:enableOnBackInvokedCallback="true">
         
 

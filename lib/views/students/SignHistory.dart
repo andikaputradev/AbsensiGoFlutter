@@ -14,7 +14,7 @@ class SignHistory extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Sign History",
+          "Riwayat Presensi Pegawai",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: theme.onSecondaryFixed,
@@ -28,7 +28,7 @@ class SignHistory extends StatelessWidget {
           if (controller.signHistoryList.isEmpty) {
             return const Center(
               child: Text(
-                "No sign-in history available",
+                "Belum ada riwayat presensi pegawai",
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
             );
