@@ -39,23 +39,39 @@ class SignHistory extends StatelessWidget {
             itemCount: controller.signHistoryList.length,
             itemBuilder: (context, index) {
               SignHistoryModel sign = controller.signHistoryList[index];
-              return ListTile(
-                leading: const Icon(Icons.check_circle, color: Colors.green),
-                title: Text(
-                  sign.moduleCode,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text("Time Signed: ${sign.timeSigned}"),
-                trailing: Text(
-                  sign.status,
-                  style: const TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
+              final isPulang = sign.status == "Pulang";
+              return Card(
+                elevation: 1,
+                margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 2),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  leading: Icon(
+                    isPulang ? Icons.logout_rounded : Icons.check_circle,
+                    color: isPulang ? Colors.orange : Colors.green,
                   ),
-                ),
-                contentPadding: const EdgeInsets.symmetric(
-                  vertical: 5,
-                  horizontal: 10,
+                  title: Text(
+                    sign.moduleCode,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text("Waktu: ${sign.timeSigned}"),
+                  trailing: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: (isPulang ? Colors.orange : Colors.green).withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      sign.status,
+                      style: TextStyle(
+                        color: isPulang ? Colors.orange.shade800 : Colors.green.shade800,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 12,
+                  ),
                 ),
               );
             },

@@ -24,6 +24,7 @@ import 'package:absensigo/views/shared/Settings.dart';
 import 'package:absensigo/views/shared/attendance.dart';
 import 'package:absensigo/views/shared/Notifications.dart';
 import 'package:absensigo/views/shared/About.dart';
+import 'package:absensigo/views/shared/PresensiPage.dart';
 
 // Student Views
 import 'package:absensigo/views/students/Dashboard.dart';
@@ -104,6 +105,7 @@ class MyApp extends StatelessWidget {
         getPages: [
           // Shared
           GetPage(name: '/', page: () => WelcomePage()),
+          GetPage(name: '/Presensi', page: () => const PresensiPage()),
           GetPage(name: '/Settings', page: () => Settings()),
           GetPage(name: '/Notification', page: () => Notifications()),
           GetPage(name: '/About', page: () => AboutAppPage()),

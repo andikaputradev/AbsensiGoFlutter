@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "com.andikaputradev.absensigo"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "29.0.13113456" 
+    ndkVersion = "28.2.13676358" 
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -19,8 +19,10 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
 
     defaultConfig {
@@ -28,7 +30,7 @@ android {
         applicationId = "com.andikaputradev.absensigo"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -49,6 +51,13 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
 }
 
+
+configurations.all {
+    resolutionStrategy {
+        force("androidx.core:core:1.15.0")
+        force("androidx.core:core-ktx:1.15.0")
+    }
+}
 
 flutter {
     source = "../.."

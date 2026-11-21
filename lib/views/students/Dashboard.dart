@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:absensigo/controllers/Student/DashboardController.dart'; // For navigation
+import 'package:absensigo/views/shared/PresensiCard.dart';
 
 class StudentDashboard extends StatelessWidget {
   const StudentDashboard({super.key});
@@ -50,6 +51,8 @@ class StudentDashboard extends StatelessWidget {
           padding: EdgeInsets.all(screenWidth * 0.05), // Responsive padding
           child: Column(
             children: [
+              const PresensiCard(),
+              const SizedBox(height: 20),
               // Responsive Grid Layout
               LayoutBuilder(
                 builder: (context, constraints) {
