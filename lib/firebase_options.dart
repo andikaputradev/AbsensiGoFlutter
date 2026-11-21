@@ -7,39 +7,25 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'Firebase belum dikonfigurasi untuk web. Jalankan flutterfire configure.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
-      case TargetPlatform.iOS:
-        return ios;
       default:
-        return android;
+        throw UnsupportedError(
+          'Firebase hanya dikonfigurasi untuk Android. Jalankan flutterfire configure untuk platform lain.',
+        );
     }
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCgquQR1D-dFQqY4U8-4smLj2LE8jO2FpA',
-    appId: '1:773384333750:android:f5ad31f926b0fdd4103917',
-    messagingSenderId: '773384333750',
-    projectId: 'absensigo-8291f',
-    storageBucket: 'absensigo-8291f.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCgquQR1D-dFQqY4U8-4smLj2LE8jO2FpA',
-    appId: '1:773384333750:ios:f5ad31f926b0fdd4103917',
-    messagingSenderId: '773384333750',
-    projectId: 'absensigo-8291f',
-    storageBucket: 'absensigo-8291f.appspot.com',
-  );
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCgquQR1D-dFQqY4U8-4smLj2LE8jO2FpA',
-    appId: '1:773384333750:web:f5ad31f926b0fdd4103917',
-    messagingSenderId: '773384333750',
-    projectId: 'absensigo-8291f',
-    storageBucket: 'absensigo-8291f.appspot.com',
+    apiKey: 'AIzaSyD9f5y7AvIuicIx4se9vn53E3uS9Vhxbq4',
+    appId: '1:144925243996:android:dc84324fdcc4a774260499',
+    messagingSenderId: '144925243996',
+    projectId: 'absensigo-pegawai-2611',
+    storageBucket: 'absensigo-pegawai-2611.firebasestorage.app',
   );
 }

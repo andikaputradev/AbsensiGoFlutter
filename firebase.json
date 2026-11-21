@@ -1,0 +1,24 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "absensigo-pegawai-2611",
+          "appId": "1:144925243996:android:dc84324fdcc4a774260499",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "absensigo-pegawai-2611",
+          "configurations": {
+            "android": "1:144925243996:android:dc84324fdcc4a774260499"
+          }
+        }
+      }
+    }
+  }
+}

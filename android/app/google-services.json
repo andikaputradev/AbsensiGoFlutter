@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "773384333750",
-    "project_id": "absensigo-8291f",
-    "storage_bucket": "absensigo-8291f.appspot.com"
+    "project_number": "144925243996",
+    "project_id": "absensigo-pegawai-2611",
+    "storage_bucket": "absensigo-pegawai-2611.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:773384333750:android:f5ad31f926b0fdd4103917",
+        "mobilesdk_app_id": "1:144925243996:android:dc84324fdcc4a774260499",
         "android_client_info": {
           "package_name": "com.andikadev.absensigo"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "773384333750-i34u4q0rheestmfgbhteoor1qhms4lvo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.andikadev.absensigo",
-            "certificate_hash": "6dfd858bd0e5fe4fad71083486f3fee5e499b88a"
-          }
-        },
-        {
-          "client_id": "773384333750-dagj89pphujf1jvhvi4gcskqbhpqvqf0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCgquQR1D-dFQqY4U8-4smLj2LE8jO2FpA"
+          "current_key": "AIzaSyD9f5y7AvIuicIx4se9vn53E3uS9Vhxbq4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "773384333750-dagj89pphujf1jvhvi4gcskqbhpqvqf0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
