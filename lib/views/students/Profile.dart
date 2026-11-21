@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/ProfileStudentController.dart';
+import 'package:absensigo/controllers/Student/ProfileStudentController.dart';
 
 class ProfileStudent extends StatelessWidget {
   final ProfileStudentController controller = Get.put(

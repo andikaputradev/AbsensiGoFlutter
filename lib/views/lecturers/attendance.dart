@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/LectureAttendanceControler.dart';
-import 'package:qrattend/controllers/Shared/UserSessionController.dart';
+import 'package:absensigo/controllers/Lecture/LectureAttendanceControler.dart';
+import 'package:absensigo/controllers/Shared/UserSessionController.dart';
 
 class LectureAttendance extends StatefulWidget {
   LectureAttendance({Key? key}) : super(key: key);

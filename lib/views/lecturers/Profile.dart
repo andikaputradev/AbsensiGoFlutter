@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/ProfileLectureController.dart';
+import 'package:absensigo/controllers/Lecture/ProfileLectureController.dart';
 
 class ProfileLecture extends StatelessWidget {
   final ProfileLectureController controller = Get.put(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/SignupStudentController.dart';
-import 'package:qrattend/utils/SearchableDropdown.dart';
+import 'package:absensigo/controllers/Student/SignupStudentController.dart';
+import 'package:absensigo/utils/SearchableDropdown.dart';
 
 class SignupStudent extends StatelessWidget {
   SignupStudent({super.key});

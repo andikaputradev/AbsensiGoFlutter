@@ -1,6 +1,6 @@
-# QR Attend - Project Documentation
+# AbsensiGo - Project Documentation
 
-QR Attend is a digital attendance management system that leverages QR code technology to simplify and secure the process of tracking student and lecturer attendance in academic institutions. The system is designed with a mobile-first approach using Flutter and Firebase.
+AbsensiGo is a digital attendance management system that leverages QR code technology to simplify and secure the process of tracking student and lecturer attendance in academic institutions. The system is designed with a mobile-first approach using Flutter and Firebase.
 
 > **Note:** This project is currently configured and tested for **Android only**. iOS support will be added in future updates.
 
@@ -8,7 +8,7 @@ QR Attend is a digital attendance management system that leverages QR code techn
 
 ## 📅 Download APK
 
-You can download the latest version of the QR Attend Android app here: [Download APK](https://github.com/Nashon-Nsemwa/QrAttend/releases/download/New/app-release.apk)
+You can download the latest version of the AbsensiGo Android app here: [Download APK](https://github.com/andikaputradev/absensigo/releases)
 
 > ⚠️ For testing purposes, use the following credentials:
 
@@ -29,7 +29,7 @@ You can download the latest version of the QR Attend Android app here: [Download
 ![Flutter](https://img.shields.io/badge/Flutter-Framework-blue)
 ![Firebase](https://img.shields.io/badge/Firebase-Backend-yellow)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Build](https://img.shields.io/github/workflow/status/yourusername/qr-attend/Flutter%20CI)
+![Build](https://img.shields.io/github/workflow/status/andikaputradev/absensigo/Flutter%20CI)
 
 ---
 
@@ -55,7 +55,7 @@ You can download the latest version of the QR Attend Android app here: [Download
 
 ## Project Overview
 
-QR Attend streamlines attendance for students and lecturers by replacing manual sign-ins with QR code scanning. It helps institutions track attendance accurately and in real time, while ensuring data integrity with Firebase backend services.
+AbsensiGo streamlines attendance for students and lecturers by replacing manual sign-ins with QR code scanning. It helps institutions track attendance accurately and in real time, while ensuring data integrity with Firebase backend services.
 
 ---
 
@@ -189,7 +189,7 @@ courses/{courseId}/modules/{moduleId}/attendance_summary/{studentId}: {
   totalClasses: 6,
   percentage: 50,
   lastUpdated: <timestamp>,
-  name: "Nashon Nsemwa"
+  name: "Andika Putra"
 }
 ```
 
@@ -200,7 +200,7 @@ courses/{courseId}/modules/{moduleId}/attendance_summary/{studentId}: {
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/qr-attend.git
+   git clone https://github.com/andikaputradev/absensigo.git
    ```
 2. Open in VSCode or Android Studio.
 3. Run `flutter pub get` to install dependencies.
@@ -230,7 +230,7 @@ courses/{courseId}/modules/{moduleId}/attendance_summary/{studentId}: {
 
 ## API Documentation
 
-Currently, QR Attend uses Firebase SDKs and does not expose a custom REST API. Key interactions are through Firebase services:
+Currently, AbsensiGo uses Firebase SDKs and does not expose a custom REST API. Key interactions are through Firebase services:
 
 ### Authentication
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Shared/StudentAttendance.dart';
-import 'package:qrattend/models/studentAttendance.dart';
+import 'package:absensigo/controllers/Shared/StudentAttendance.dart';
+import 'package:absensigo/models/studentAttendance.dart';
 
 class StudentAttendance extends StatelessWidget {
   final AttendanceController controller = Get.find();

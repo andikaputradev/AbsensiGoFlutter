@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "qrattend" "\0"
+            VALUE "CompanyName", "com.andikaputradev" "\0"
+            VALUE "FileDescription", "AbsensiGo" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "qrattend" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "qrattend.exe" "\0"
-            VALUE "ProductName", "qrattend" "\0"
+            VALUE "InternalName", "absensigo" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.andikaputradev. All rights reserved." "\0"
+            VALUE "OriginalFilename", "absensigo.exe" "\0"
+            VALUE "ProductName", "AbsensiGo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

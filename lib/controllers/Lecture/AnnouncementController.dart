@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_functions/cloud_functions.dart';
-import 'package:qrattend/models/annoncementmodel.dart';
+import 'package:absensigo/models/annoncementmodel.dart';
 
 class AnnouncementController extends GetxController {
   var selectedCourse = RxnString();

@@ -5,7 +5,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:qrattend/utils/CustomeScandialog.dart';
+import 'package:absensigo/utils/CustomeScandialog.dart';
 
 class QRScanController extends GetxController {
   final MobileScannerController scannerController = MobileScannerController();

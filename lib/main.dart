@@ -5,48 +5,48 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'package:qrattend/bindings/LectureBindings.dart';
-import 'package:qrattend/bindings/SharedBindings.dart';
-import 'package:qrattend/bindings/StudentBindings.dart';
-import 'package:qrattend/config/theme.dart';
+import 'package:absensigo/bindings/LectureBindings.dart';
+import 'package:absensigo/bindings/SharedBindings.dart';
+import 'package:absensigo/bindings/StudentBindings.dart';
+import 'package:absensigo/config/theme.dart';
 
-import 'package:qrattend/controllers/Shared/UserSessionController.dart';
-import 'package:qrattend/controllers/Shared/ThemeController.dart'; //
-import 'package:qrattend/firebase_options.dart';
-import 'package:qrattend/views/lecturers/announcementHistory.dart';
-import 'package:qrattend/views/shared/PrivacyPolicy.dart';
-import 'package:qrattend/views/shared/TermsConidtion.dart';
+import 'package:absensigo/controllers/Shared/UserSessionController.dart';
+import 'package:absensigo/controllers/Shared/ThemeController.dart'; //
+import 'package:absensigo/firebase_options.dart';
+import 'package:absensigo/views/lecturers/announcementHistory.dart';
+import 'package:absensigo/views/shared/PrivacyPolicy.dart';
+import 'package:absensigo/views/shared/TermsConidtion.dart';
 
 // Shared Views
-import 'package:qrattend/views/shared/Welcome.dart';
-import 'package:qrattend/views/shared/Role.dart';
-import 'package:qrattend/views/shared/Settings.dart';
-import 'package:qrattend/views/shared/attendance.dart';
-import 'package:qrattend/views/shared/Notifications.dart';
-import 'package:qrattend/views/shared/About.dart';
+import 'package:absensigo/views/shared/Welcome.dart';
+import 'package:absensigo/views/shared/Role.dart';
+import 'package:absensigo/views/shared/Settings.dart';
+import 'package:absensigo/views/shared/attendance.dart';
+import 'package:absensigo/views/shared/Notifications.dart';
+import 'package:absensigo/views/shared/About.dart';
 
 // Student Views
-import 'package:qrattend/views/students/Dashboard.dart';
-import 'package:qrattend/views/students/Module.dart';
-import 'package:qrattend/views/students/Navigation.dart';
-import 'package:qrattend/views/students/Profile.dart';
-import 'package:qrattend/views/students/Scanqr.dart';
-import 'package:qrattend/views/students/Schedule.dart';
-import 'package:qrattend/views/students/SignHistory.dart';
-import 'package:qrattend/views/students/SigninStudent.dart';
-import 'package:qrattend/views/students/SignupStudent.dart';
+import 'package:absensigo/views/students/Dashboard.dart';
+import 'package:absensigo/views/students/Module.dart';
+import 'package:absensigo/views/students/Navigation.dart';
+import 'package:absensigo/views/students/Profile.dart';
+import 'package:absensigo/views/students/Scanqr.dart';
+import 'package:absensigo/views/students/Schedule.dart';
+import 'package:absensigo/views/students/SignHistory.dart';
+import 'package:absensigo/views/students/SigninStudent.dart';
+import 'package:absensigo/views/students/SignupStudent.dart';
 
 // Lecture Views
-import 'package:qrattend/views/lecturers/Dashboard.dart';
-import 'package:qrattend/views/lecturers/Announcement.dart';
-import 'package:qrattend/views/lecturers/GenerateQr.dart';
-import 'package:qrattend/views/lecturers/Profile.dart';
-import 'package:qrattend/views/lecturers/SigninLecture.dart';
-import 'package:qrattend/views/lecturers/SignupLecture.dart';
-import 'package:qrattend/views/lecturers/StudentList.dart';
-import 'package:qrattend/views/lecturers/attendance.dart';
-import 'package:qrattend/views/lecturers/navigation.dart';
-import 'package:qrattend/views/lecturers/schedule.dart';
+import 'package:absensigo/views/lecturers/Dashboard.dart';
+import 'package:absensigo/views/lecturers/Announcement.dart';
+import 'package:absensigo/views/lecturers/GenerateQr.dart';
+import 'package:absensigo/views/lecturers/Profile.dart';
+import 'package:absensigo/views/lecturers/SigninLecture.dart';
+import 'package:absensigo/views/lecturers/SignupLecture.dart';
+import 'package:absensigo/views/lecturers/StudentList.dart';
+import 'package:absensigo/views/lecturers/attendance.dart';
+import 'package:absensigo/views/lecturers/navigation.dart';
+import 'package:absensigo/views/lecturers/schedule.dart';
 
 //Background initialization in push notification
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {

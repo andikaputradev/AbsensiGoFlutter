@@ -21,7 +21,7 @@ class TermsCondition extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "By using the QRAttend app, you agree to follow these Terms and Conditions. If you do not agree, please do not use the app.",
+                "By using the AbsensiGo app, you agree to follow these Terms and Conditions. If you do not agree, please do not use the app.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -32,7 +32,7 @@ class TermsCondition extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "QRAttend is designed to help schools, lecturers, and students manage attendance using QR codes. The app is intended strictly for academic use.",
+                "AbsensiGo is designed to help schools, lecturers, and students manage attendance using QR codes. The app is intended strictly for academic use.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -56,7 +56,7 @@ class TermsCondition extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "Access to QRAttend is role-based (Student, Lecturer, Admin). Features are restricted based on your assigned role, and misuse may result in suspension.",
+                "Access to AbsensiGo is role-based (Student, Lecturer, Admin). Features are restricted based on your assigned role, and misuse may result in suspension.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -67,7 +67,7 @@ class TermsCondition extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "All content, icons, and features in QRAttend are the property of the developer. Do not copy or redistribute the app or its code without permission.",
+                "All content, icons, and features in AbsensiGo are the property of the developer. Do not copy or redistribute the app or its code without permission.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -105,7 +105,7 @@ class TermsCondition extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "📧 nashonnsemwa@gmail.com",
+                "📧 wahyuandikaputra.co.id@gmail.com",
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
@@ -116,7 +116,7 @@ class TermsCondition extends StatelessWidget {
               SizedBox(height: 30),
               Center(
                 child: Text(
-                  "© 2025 QRAttend",
+                  "© 2025 AbsensiGo",
                   style: TextStyle(fontSize: 14, color: Colors.grey),
                 ),
               ),

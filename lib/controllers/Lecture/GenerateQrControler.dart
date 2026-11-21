@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Firestore
-import 'package:qrattend/models/GenerateQrCodeData.dart';
+import 'package:absensigo/models/GenerateQrCodeData.dart';
 
 class GenerateQrController extends GetxController {
   final box = GetStorage();
@@ -50,7 +50,7 @@ class GenerateQrController extends GetxController {
         });
   }
 
-  // Fetch courses/modules from Firestore where lecturer == "Mr Nsemwa"
+  // Fetch courses/modules from Firestore where lecturer matches lecturerUid
   Future<void> fetchCourseModulePairs() async {
     Map<String, List<String>> courseModules = {};
 

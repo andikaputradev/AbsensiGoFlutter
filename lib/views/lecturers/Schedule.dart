@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/ScheduleController.dart';
-import 'package:qrattend/models/Schedule.dart';
+import 'package:absensigo/controllers/Lecture/ScheduleController.dart';
+import 'package:absensigo/models/Schedule.dart';
 
 class LectureSchedule extends StatelessWidget {
   final LectureScheduleController controller = Get.find();

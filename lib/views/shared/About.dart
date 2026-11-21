@@ -8,7 +8,7 @@ class AboutAppPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AboutPage(
       values: {'version': '1.0.0', 'year': DateTime.now().year.toString()},
-      title: const Text('About QrAttend'),
+      title: const Text('About AbsensiGo'),
       applicationVersion: 'Version {{ version }}',
       applicationIcon: const CircleAvatar(
         radius: 40,
@@ -23,23 +23,23 @@ class AboutAppPage extends StatelessWidget {
         ),
       ),
 
-      applicationLegalese: '© {{ year }} QrAttend Inc.',
+      applicationLegalese: '© {{ year }} AbsensiGo Inc.',
       applicationDescription: const Text(
-        'QrAttend is a smart attendance management system designed for universities. '
+        'AbsensiGo is a smart attendance management system designed for universities. '
         'Leveraging QR code technology, it simplifies and secures student check-ins during lectures. '
         'Lecturers can dynamically generate QR codes for their sessions, while students scan them to register attendance. '
         'The app offers real-time attendance tracking, schedule and module viewing, and personalized notifications for both students and lecturers.\n\n'
-        'To enhance accuracy, QrAttend incorporates geolocation to verify physical proximity, preventing fraudulent check-ins. '
+        'To enhance accuracy, AbsensiGo incorporates geolocation to verify physical proximity, preventing fraudulent check-ins. '
         'Lecturers can monitor attendance statistics, print reports, and send announcements. '
         'Students can track their attendance percentage and stay informed through live updates.\n\n'
-        'With QrAttend, attendance is automated, secure, and efficient — redefining classroom presence in the digital age.',
+        'With AbsensiGo, attendance is automated, secure, and efficient — redefining classroom presence in the digital age.',
       ),
 
       children: const <Widget>[
         ListTile(
           leading: Icon(Icons.email),
           title: Text('Contact Us'),
-          subtitle: Text('nashonnsemwa@gmail.com'),
+          subtitle: Text('wahyuandikaputra.co.id@gmail.com'),
         ),
         ListTile(leading: Icon(Icons.link), title: Text('GitHub Account')),
       ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:qrattend/controllers/Student/ScanqrControler.dart';
+import 'package:absensigo/controllers/Student/ScanqrControler.dart';
 
 class Scanqr extends StatelessWidget {
   final QRScanController controller = Get.find();

@@ -1,11 +1,11 @@
 {
-    "name": "qrattend",
-    "short_name": "qrattend",
+    "name": "AbsensiGo",
+    "short_name": "AbsensiGo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "AbsensiGo - Smart attendance management system.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

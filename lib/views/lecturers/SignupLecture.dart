@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/SignupLectureController.dart';
-import 'package:qrattend/utils/SearchableDropdown.dart';
+import 'package:absensigo/controllers/Lecture/SignupLectureController.dart';
+import 'package:absensigo/utils/SearchableDropdown.dart';
 
 class SignupLecture extends StatelessWidget {
   SignupLecture({super.key});

@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/GenerateQrControler.dart';
-import 'package:qrattend/controllers/Lecture/LectureAttendanceControler.dart';
-import 'package:qrattend/controllers/Lecture/NavigationControler.dart';
-import 'package:qrattend/controllers/Lecture/SaveShareController.dart';
-import 'package:qrattend/controllers/Lecture/ScheduleController.dart';
-import 'package:qrattend/controllers/Lecture/StudentListControllers.dart';
+import 'package:absensigo/controllers/Lecture/GenerateQrControler.dart';
+import 'package:absensigo/controllers/Lecture/LectureAttendanceControler.dart';
+import 'package:absensigo/controllers/Lecture/NavigationControler.dart';
+import 'package:absensigo/controllers/Lecture/SaveShareController.dart';
+import 'package:absensigo/controllers/Lecture/ScheduleController.dart';
+import 'package:absensigo/controllers/Lecture/StudentListControllers.dart';
 
 class LectureNavBinding extends Bindings {
   @override

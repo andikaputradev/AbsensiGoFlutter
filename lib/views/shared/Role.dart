@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Shared/RoleController.dart';
-import 'package:qrattend/controllers/Shared/UserSessionController.dart';
+import 'package:absensigo/controllers/Shared/RoleController.dart';
+import 'package:absensigo/controllers/Shared/UserSessionController.dart';
 
 class Role extends StatelessWidget {
   final RoleController controller = Get.find();

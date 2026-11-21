@@ -19,7 +19,7 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "QRAttend is committed to protecting your privacy. This policy explains how we collect, use, and protect your personal data while using the app.",
+                "AbsensiGo is committed to protecting your privacy. This policy explains how we collect, use, and protect your personal data while using the app.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -94,7 +94,7 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "QRAttend is used in educational settings and may involve students under 18. Usage must be supervised or authorized by school institutions.",
+                "AbsensiGo is used in educational settings and may involve students under 18. Usage must be supervised or authorized by school institutions.",
                 style: TextStyle(fontSize: 16),
               ),
 
@@ -121,7 +121,7 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               SizedBox(height: 6),
               Text(
-                "📧 Developer Email: nashonnsemwa@gmail.com",
+                "📧 Developer Email: wahyuandikaputra.co.id@gmail.com",
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
@@ -132,7 +132,7 @@ class PrivacyPolicy extends StatelessWidget {
               SizedBox(height: 30),
               Center(
                 child: Text(
-                  "© 2025 QRAttend",
+                  "© 2025 AbsensiGo",
                   style: TextStyle(fontSize: 14, color: Colors.grey),
                 ),
               ),

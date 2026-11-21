@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/StudentListControllers.dart';
+import 'package:absensigo/controllers/Lecture/StudentListControllers.dart';
 
 class StudentList extends StatelessWidget {
   final StudentListController controller = Get.find();

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:qrattend/models/StudentProfile.dart';
+import 'package:absensigo/models/StudentProfile.dart';
 
 import '../../services/NotificationServices.dart';
 

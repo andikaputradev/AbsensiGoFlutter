@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Lecture/AnnouncementController.dart';
+import 'package:absensigo/controllers/Lecture/AnnouncementController.dart';
 
 class Announcement extends StatelessWidget {
   final AnnouncementController controller = Get.put(AnnouncementController());

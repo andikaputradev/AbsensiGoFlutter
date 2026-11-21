@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/SigninStudentController.dart';
+import 'package:absensigo/controllers/Student/SigninStudentController.dart';
 
 class SigninStudent extends StatelessWidget {
   final SigninStudentController controller = Get.put(SigninStudentController());

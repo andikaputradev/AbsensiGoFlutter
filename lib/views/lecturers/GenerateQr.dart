@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:qrattend/controllers/Lecture/GenerateQrControler.dart';
-import 'package:qrattend/controllers/Lecture/SaveShareController.dart';
-import 'package:qrattend/models/GenerateQrCodeData.dart';
+import 'package:absensigo/controllers/Lecture/GenerateQrControler.dart';
+import 'package:absensigo/controllers/Lecture/SaveShareController.dart';
+import 'package:absensigo/models/GenerateQrCodeData.dart';
 import 'package:screenshot/screenshot.dart';
 
 class GenerateQr extends StatelessWidget {

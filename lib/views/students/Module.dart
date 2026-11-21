@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/Module.dart';
-import 'package:qrattend/models/Module.dart';
+import 'package:absensigo/controllers/Student/Module.dart';
+import 'package:absensigo/models/Module.dart';
 
 class Modules extends StatelessWidget {
   final ModuleController controller = Get.find();

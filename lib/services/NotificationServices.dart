@@ -106,8 +106,8 @@ class NotificationService {
 
   static void _showLocalNotification(RemoteMessage message) {
     final androidDetails = AndroidNotificationDetails(
-      'qrattend_notifications', //channel ID
-      'QrAttend Notifications', //channel Name
+      'absensigo_notifications', //channel ID
+      'AbsensiGo Notifications', //channel Name
       channelDescription: 'Used for receiving push notifications',
       importance: Importance.high,
       priority: Priority.high,

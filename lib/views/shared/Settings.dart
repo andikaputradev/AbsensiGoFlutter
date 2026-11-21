@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:qrattend/controllers/Shared/SignOutController.dart';
-import 'package:qrattend/controllers/Shared/ThemeController.dart';
-import 'package:qrattend/controllers/Shared/UserSessionController.dart';
+import 'package:absensigo/controllers/Shared/SignOutController.dart';
+import 'package:absensigo/controllers/Shared/ThemeController.dart';
+import 'package:absensigo/controllers/Shared/UserSessionController.dart';
 
 class Settings extends StatelessWidget {
   Settings({super.key});

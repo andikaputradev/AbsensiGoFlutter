@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/NavigationControler.dart';
-import 'package:qrattend/views/shared/Settings.dart';
-import 'package:qrattend/views/students/Dashboard.dart';
-import 'package:qrattend/views/shared/Notifications.dart';
+import 'package:absensigo/controllers/Student/NavigationControler.dart';
+import 'package:absensigo/views/shared/Settings.dart';
+import 'package:absensigo/views/students/Dashboard.dart';
+import 'package:absensigo/views/shared/Notifications.dart';
 
 class StudentNavigation extends StatelessWidget {
   const StudentNavigation({super.key});

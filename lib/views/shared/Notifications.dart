@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Shared/NotificationController%20.dart';
-import 'package:qrattend/models/Notification.dart';
+import 'package:absensigo/controllers/Shared/NotificationController%20.dart';
+import 'package:absensigo/models/Notification.dart';
 
 class Notifications extends StatelessWidget {
   const Notifications({super.key});

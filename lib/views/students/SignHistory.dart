@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/SignHistory.dart';
-import 'package:qrattend/models/SignHistory.dart';
+import 'package:absensigo/controllers/Student/SignHistory.dart';
+import 'package:absensigo/models/SignHistory.dart';
 
 class SignHistory extends StatelessWidget {
   final SignHistoryController controller = Get.find();

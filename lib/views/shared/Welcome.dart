@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Shared/WelcomeController.dart';
+import 'package:absensigo/controllers/Shared/WelcomeController.dart';
 
 class WelcomePage extends StatelessWidget {
   WelcomePage({super.key});
@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
 
                 // App Name with better typography
                 Text(
-                  "QrAttend",
+                  "AbsensiGo",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class WelcomePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
-                    "Make attendance easy and stress-free with QrAttend - Quick, Secure, and Real-time tracking at your fingertips.",
+                    "Make attendance easy and stress-free with AbsensiGo - Quick, Secure, and Real-time tracking at your fingertips.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,

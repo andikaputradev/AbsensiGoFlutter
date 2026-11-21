@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Student/Module.dart';
-import 'package:qrattend/controllers/Student/NavigationControler.dart';
-import 'package:qrattend/controllers/Student/ScanqrControler.dart';
-import 'package:qrattend/controllers/Student/Schedule.dart';
-import 'package:qrattend/controllers/Student/SignHistory.dart';
+import 'package:absensigo/controllers/Student/Module.dart';
+import 'package:absensigo/controllers/Student/NavigationControler.dart';
+import 'package:absensigo/controllers/Student/ScanqrControler.dart';
+import 'package:absensigo/controllers/Student/Schedule.dart';
+import 'package:absensigo/controllers/Student/SignHistory.dart';
 
 class StudentNavBinding extends Bindings {
   @override

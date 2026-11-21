@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:qrattend/controllers/Shared/NotificationController%20.dart';
-import 'package:qrattend/controllers/Shared/RoleController.dart';
+import 'package:absensigo/controllers/Shared/NotificationController%20.dart';
+import 'package:absensigo/controllers/Shared/RoleController.dart';
 
-import 'package:qrattend/controllers/Shared/StudentAttendance.dart';
+import 'package:absensigo/controllers/Shared/StudentAttendance.dart';
 
 class NotificationBinding extends Bindings {
   @override
